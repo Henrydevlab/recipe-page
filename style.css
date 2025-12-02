@@ -1,0 +1,279 @@
+/*
+ * CSS Styles: styles.css
+ * ------------------------------------------------------------------------
+ */
+
+/* * CSS Custom Properties (Variables) */
+:root {
+  /* Colors */
+  --color-white: hsl(0, 0%, 100%);
+  --color-stone-100: hsl(30, 54%, 90%);
+  --color-stone-150: hsl(30, 18%, 87%);
+  --color-stone-600: hsl(30, 10%, 34%);
+  --color-stone-900: hsl(24, 5%, 18%);
+  --color-brown-800: hsl(14, 45%, 36%); /* Primary Accent */
+  --color-rose-800: hsl(332, 51%, 32%); /* Secondary Accent */
+  --color-rose-50: hsl(330, 100%, 98%); /* Prep Background */
+  
+  /* Typography */
+  --font-primary: 'Outfit', sans-serif;
+  --font-secondary: 'Young Serif', serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+  --font-size-base: 16px;
+}
+
+/* CSS Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-stone-100);
+  font-family: var(--font-primary);
+  color: var(--color-stone-600);
+  font-size: var(--font-size-base);
+}
+
+/* Media Reset for responsiveness and block-level behavior */
+img, picture {
+  display: block;
+  max-width: 100%;
+}
+
+/* Typography Defaults */
+h1, h2, h3 {
+  font-family: var(--font-secondary);
+}
+
+/* Main Container Styles */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+}
+
+/* Mobile Styles (Default: 375px design base) */
+.container {
+  padding: 0;
+}
+
+.recipe-image {
+  border-radius: 0;
+  height: auto;
+}
+
+.content-wrapper {
+  padding: 2.5rem 2rem;
+  padding-top: 3rem; 
+}
+
+/* Headings */
+.recipe-title {
+  color: var(--color-stone-900);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 2.25rem; 
+}
+
+/* Preparation Time Section */
+.preparation-time {
+  background-color: var(--color-rose-50);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-top: 2rem;
+}
+
+.preparation-time__title {
+  color: var(--color-rose-800);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.preparation-time ul {
+  list-style-type: none;
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.preparation-time ul li {
+  padding-left: 1rem;
+  position: relative;
+}
+
+.preparation-time ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 4px;
+  height: 4px;
+  background-color: var(--color-rose-800);
+  border-radius: 50%;
+}
+
+.time-value {
+  font-weight: var(--font-weight-medium);
+}
+
+/* Ingredients and Instructions */
+.section-title {
+  color: var(--color-brown-800);
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-regular);
+  font-size: 1.75rem;
+}
+
+.ingredients {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-stone-150);
+}
+
+ul, ol {
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+ul li, ol li {
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  list-style-position: outside;
+}
+
+ul li::marker {
+  color: var(--color-brown-800);
+}
+
+ol li::marker {
+  color: var(--color-brown-800);
+  font-weight: var(--font-weight-bold);
+}
+
+li strong {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-stone-900);
+}
+
+.instructions {
+  padding-bottom: 1.5rem; 
+  border-bottom: 1px solid var(--color-stone-150);
+}
+
+/* Nutrition Section */
+.nutrition {  
+  padding-top: 0rem; 
+  padding-bottom: 1rem;
+}
+
+.nutrition-text {
+  margin-bottom: 1.5rem;
+}
+
+.nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Mobile Nutrition Table Layout */
+.nutrition-table tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-stone-150);
+}
+
+.nutrition-table tr:last-child {
+  border-bottom: none;
+}
+
+.nutrition-table td:first-child { 
+  padding-left: 2rem;
+  text-align: left;
+}
+
+.nutrition-table td:last-child { 
+  text-align: left;
+  padding-left: 2rem;
+  padding-right: 0; 
+}
+
+.nutrition-value {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-brown-800);
+}
+
+/* Attribution */
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+  padding: 1rem;
+  margin-top: 2rem;
+  color: var(--color-stone-600);
+}
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+  text-decoration: none;
+}
+
+/*
+ * Desktop Styles (Min-width: 700px)
+ * 
+ */
+@media (min-width: 700px) {
+  body {
+    padding: 5rem 0;
+  }
+  
+  .container {
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+  }
+
+  .recipe-image {
+    border-radius: 0.75rem;
+  }
+
+  .content-wrapper {
+    padding: 0; 
+    margin-top: 1rem; 
+  }
+
+  .recipe-title {
+    font-size: 2.5rem;
+  }
+
+  /* Desktop Nutrition Table Layout */
+  .nutrition-table tr {
+    grid-template-columns: 1fr 1fr;
+    padding: 0.75rem 2rem; 
+  }
+
+  .nutrition-table td:first-child {
+    padding-left: 0; 
+    text-align: left;
+  }
+
+  .nutrition-table td:last-child {
+    text-align: left; 
+    padding-right: 0; 
+  }
+  
+  /* Applying desktop spacing consistent with mobile */
+  .instructions {
+    padding-bottom: 1.5rem; 
+  }
+
+  .nutrition {    
+    padding-top: 0rem; 
+  }
+}
